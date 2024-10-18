@@ -1,0 +1,13 @@
+server {
+    listen 80;  # Listen for HTTP traffic on port 80
+    server_name http://10.116.101.69:8501;  # Replace with your domain name or server's public IP
+
+    location / {
+        proxy_pass http://localhost:8501;  # Forward requests to your Streamlit app
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+    }
+}
