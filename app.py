@@ -59,7 +59,7 @@ def process_file(file, destination, mode):
 
 
 st.title("Distance Commute App")
-gmapsAPI = st.text_input("GoogleMapsAPI")
+gmapsAPI = st.text_input("API KEY")
 destination = st.text_input("Destination")
 modeoftravel = st.selectbox("Mode of travel", 
                       ('Driving', 'Walking', 'Transit', 'Bicycling'))
